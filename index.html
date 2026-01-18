@@ -43,9 +43,98 @@ nav.main-nav a:hover::after{width:100%}
 .hero .widget{max-width:1200px;width:96%;margin-top:460px;padding:28px 32px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;backdrop-filter:blur(14px);font-size:15px;line-height:1.55;color:#e6ebff;box-shadow:0 20px 60px rgba(0,0,0,.45);position:relative;z-index:3}
 .hero .widget:before{content:"⚛️ 1 SAT = 1 UNIT";position:absolute;top:-14px;left:24px;font-size:12px;letter-spacing:.12em;color:#7ce7ff;background:#0b0f1a;padding:4px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.18)}
 
-footer{padding:60px 8vw;text-align:center;font-size:14px;color:#aaa;border-top:1px solid rgba(255,255,255,.08)}
+footer{position:relative;z-index:6;padding:100px 8vw 70px;background:linear-gradient(180deg,rgba(9,13,24,.65),rgba(9,13,24,.95));backdrop-filter:blur(22px);border-top:1px solid rgba(255,255,255,.14)}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:56px}
+.footer-brand h3{margin:0 0 16px;font-size:24px;font-weight:900;letter-spacing:.02em}
+.footer-brand h3 span{background:linear-gradient(90deg,#00e5ff,#7c7cff,#ff5cff,#00ffa6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.footer-brand p{font-size:15px;line-height:1.7;color:#d6ddff;max-width:460px}
+.footer-links h4,.footer-meta h4{margin:0 0 18px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#9fe7ff}
+.footer-links a{display:block;margin-bottom:12px;font-size:15px;color:#cfd6ff;text-decoration:none;opacity:.8;transition:opacity .25s,transform .25s}
+.footer-links a:hover{opacity:1;transform:translateX(4px)}
+.footer-meta{font-size:14px;color:#b8c3ff;line-height:1.8}
+.footer-bottom{margin-top:64px;padding-top:28px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:12px;color:#aab2ff;letter-spacing:.04em}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:48px}
+.footer-brand h3{margin:0 0 14px;font-size:22px;font-weight:800}
+.footer-brand h3 span{background:linear-gradient(90deg,#00e5ff,#7c7cff,#ff5cff,#00ffa6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.footer-brand p{font-size:14px;line-height:1.6;color:#cfd6ff;max-width:420px}
+.footer-links h4,.footer-meta h4{margin:0 0 14px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#9fe7ff}
+.footer-links a{display:block;margin-bottom:10px;font-size:14px;color:#cfd6ff;text-decoration:none;opacity:.85}
+.footer-links a:hover{opacity:1;color:#fff}
+.footer-meta{font-size:13px;color:#ffffff}
+.footer-meta a{color:#ffffff;text-decoration:none;opacity:.9}
+.footer-meta a:hover{opacity:1;color:#ffffff}
+.footer-bottom{margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px;color:#aaa;text-align:center}
 @keyframes appear{to{opacity:.9;transform:translateY(0)}}
 .mini{animation:appear .8s forwards}
+
+/* ================= MOBILE OPTIMIZATION ONLY ================= */
+@media (max-width: 768px){
+  /* GLOBAL SAFETY */
+  body{overflow-x:hidden}
+  section{padding:80px 6vw}
+
+  /* HERO */
+  .hero{height:auto;min-height:100vh;padding-top:120px;padding-bottom:80px}
+  .hero h1{font-size:36px;margin-bottom:24px}
+
+  /* SIDE ICONS → GRID */
+  .side-icons{
+    position:static;
+    transform:none;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+    margin:0 auto 28px;
+    max-width:100%;
+  }
+  .side-icons.left,.side-icons.right{left:auto;right:auto}
+
+  .mini{
+    opacity:1 !important;
+    transform:none !important;
+    max-width:150px;
+    font-size:11.5px;
+  }
+
+  .hero .widget{
+    margin-top:0;
+    margin-bottom:32px;
+    width:100%;
+    font-size:14px;
+  }
+
+  /* ABOUT SECTION FIX */
+  .about-widget{
+    grid-template-columns:1fr !important;
+    gap:32px !important;
+    padding:32px !important;
+  }
+
+  .about-widget p{font-size:16px !important}
+
+  .about-widget > div:first-child > div{
+    flex-wrap:wrap !important;
+    justify-content:center !important;
+    gap:12px !important;
+  }
+
+  pre{
+    white-space:pre-wrap;
+    word-break:break-word;
+    font-size:12px !important;
+  }
+
+  /* HEADER */
+  header{top:8px}
+  .header-inner{padding:10px 14px;border-radius:14px}
+
+  /* FOOTER */
+  .footer-inner{grid-template-columns:1fr;gap:32px;text-align:center}
+  .footer-brand p{margin:0 auto}
+  .footer-bottom{justify-content:center;text-align:center}
+}
+
 </style>
 </head>
 <body>
@@ -59,7 +148,7 @@ footer{padding:60px 8vw;text-align:center;font-size:14px;color:#aaa;border-top:1
       <a href="#atom">Atomicals</a>
       <a href="#mint">Simulation</a>
     </nav>
-    <button class="cta" onclick="window.open('https://bitatom.io/arc20/coloredatom','_blank')">Launch App</button>
+    <button class="cta" onclick="window.open('https://bitatom.io/arc20/coloredatom','_blank')">Mining</button>
   </div>
 </header>
 
@@ -207,8 +296,37 @@ Layer          : Bitcoin L1</pre>
 
 
 <footer>
-ColoredAtom Protocol — Powered by Bitcoin<br>
-Experimental · Atomicals Ecosystem
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <h3><span>Atomicals Community</span></h3>
+      <p>
+        Atomicals Community is a collaborative open‑source organization advancing the Atomicals Protocol —
+        a Bitcoin‑native framework for ARC‑20 tokens, digital objects, identities and developer tooling,
+        all secured directly on Bitcoin Layer 1.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Community</h4>
+      <a href="https://github.com/atomicals-community" target="_blank" rel="noopener">GitHub Organization</a>
+      <a href="https://github.com/atomicals-community/atomicals-guide" target="_blank" rel="noopener">Guides & Documentation</a>
+      <a href="https://github.com/atomicals-community/awesome-atomicals" target="_blank" rel="noopener">Awesome Atomicals</a>
+    </div>
+
+    <div class="footer-meta">
+      <h4>Core Projects</h4>
+      <div><a href="https://github.com/atomicals-community/atomicals-js" target="_blank" rel="noopener">atomicals‑js CLI</a></div>
+      <div><a href="https://github.com/atomicals-community/atomicals-electrumx" target="_blank" rel="noopener">ElectrumX Indexer</a></div>
+      <div><a href="https://github.com/atomicals-community/AIPs" target="_blank" rel="noopener">Atomicals Improvement Proposals</a></div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div>© 2026 Colored Atom</div>
+    <div>Bitcoin Layer 1 · Open Source · UTXO‑Native</div>
+  </div>
 </footer>
 
 <script>
@@ -373,65 +491,49 @@ const connectBtn = document.getElementById('connectWalletBtn');
 const mintBtn = document.getElementById('mintBtn');
 const mintStatus = document.getElementById('mintStatus');
 
-// UX HONESTO:
-// 1) Detecta Wizz solo para mostrar estado
-// 2) NO envía transacciones reales
-// 3) Simula el flujo ARC-20 de forma clara
-
-function getWizzProvider() {
-  if (window.wizzWallet) return window.wizzWallet;
-  if (window.wizz) return window.wizz;
-  if (window.bitcoin && window.bitcoin.isWizz) return window.bitcoin;
-  return null;
-}
-
-connectBtn.onclick = async () => {
-  const wizz = getWizzProvider();
-  if (!wizz) {
-    mintStatus.textContent = 'WizzWallet no detectada. (Modo simulación activo)';
-    wizzAddress = 'SIMULATED_ADDRESS';
-    return;
-  }
-  try {
-    mintStatus.textContent = 'Conectando a WizzWallet…';
-    const result = wizz.connect ? await wizz.connect() : await wizz.requestAccounts();
-    if (Array.isArray(result)) wizzAddress = result[0];
-    else if (result && result.address) wizzAddress = result.address;
-
-    if (!wizzAddress) {
-      mintStatus.textContent = 'Wallet detectada, pero sin dirección expuesta';
+if (connectBtn) {
+  connectBtn.onclick = async () => {
+    const wizz = getWizzProvider();
+    if (!wizz) {
+      if (mintStatus) mintStatus.textContent = 'WizzWallet no detectada. (Modo simulación activo)';
+      wizzAddress = 'SIMULATED_ADDRESS';
       return;
     }
-    mintStatus.textContent = 'Conectado (solo lectura): ' + wizzAddress.slice(0,6) + '…' + wizzAddress.slice(-4);
-  } catch (e) {
-    console.error(e);
-    mintStatus.textContent = 'Conexión cancelada — usando simulación';
-    wizzAddress = 'SIMULATED_ADDRESS';
-  }
-};
+    try {
+      if (mintStatus) mintStatus.textContent = 'Conectando a WizzWallet…';
+      const result = wizz.connect ? await wizz.connect() : await wizz.requestAccounts();
+      if (Array.isArray(result)) wizzAddress = result[0];
+      else if (result && result.address) wizzAddress = result.address;
+      if (!wizzAddress) {
+        if (mintStatus) mintStatus.textContent = 'Wallet detectada, pero sin dirección expuesta';
+        return;
+      }
+      if (mintStatus) mintStatus.textContent = 'Conectado (solo lectura): ' + wizzAddress.slice(0,6) + '…' + wizzAddress.slice(-4);
+    } catch (e) {
+      wizzAddress = 'SIMULATED_ADDRESS';
+      if (mintStatus) mintStatus.textContent = 'Conexión cancelada — usando simulación';
+    }
+  };
+}
 
-mintBtn.onclick = async () => {
-  if (!wizzAddress) {
-    mintStatus.textContent = 'Conecta la wallet (simulada o real) primero';
-    return;
-  }
-
-  const amount = Number(document.getElementById('mintAmount').value);
-  if (!amount || amount <= 0) {
-    mintStatus.textContent = 'Ingresa una cantidad válida de sats';
-    return;
-  }
-
-  // SIMULACIÓN HONESTA
-  mintStatus.innerHTML = 'Simulación en curso…<br>Firmando → Atomicals → Bitcoin L1';
-
-  setTimeout(() => {
-    mintStatus.innerHTML =
-      '✔ Simulación completada<br>' +
-      '<small>No se envió ninguna transacción real.<br>' +
-      amount + ' satoshis serían devueltos como <strong>COLORED ATOM</strong>.</small>';
-  }, 1400);
-};
+if (mintBtn) {
+  mintBtn.onclick = async () => {
+    if (!wizzAddress) {
+      if (mintStatus) mintStatus.textContent = 'Conecta la wallet primero';
+      return;
+    }
+    const amountInput = document.getElementById('mintAmount');
+    const amount = amountInput ? Number(amountInput.value) : 0;
+    if (!amount || amount <= 0) {
+      if (mintStatus) mintStatus.textContent = 'Ingresa una cantidad válida de sats';
+      return;
+    }
+    if (mintStatus) mintStatus.innerHTML = 'Simulación en curso…<br>Firmando → Atomicals → Bitcoin L1';
+    setTimeout(() => {
+      if (mintStatus) mintStatus.innerHTML = '✔ Simulación completada<br><small>' + amount + ' satoshis serían devueltos como <strong>COLORED ATOM</strong>.</small>';
+    }, 1400);
+  };
+}
 
 </script>
 </body>
